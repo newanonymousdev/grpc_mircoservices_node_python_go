@@ -1,0 +1,7 @@
+Express/node_modules
+Express/.env
+Express/package-lock.json
+
+
+Django/venv
+Django/db.sqlite3
