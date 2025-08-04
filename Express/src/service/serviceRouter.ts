@@ -1,8 +1,12 @@
 import { Router } from "express";
-import { getServiceController } from "./serviceController";
+import {
+  createReviewController,
+  getServiceController,
+} from "./serviceController";
 
 const serviceRouter = Router();
 
 serviceRouter.get("", getServiceController);
+serviceRouter.post("/create-review", createReviewController);
 
 export default serviceRouter;

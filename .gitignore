@@ -1,7 +1,12 @@
-Express/node_modules
+# Ignore all .DS_Store files recursively
+**/.DS_Store
+
+# Ignore Express folder specific files/folders
+Express/node_modules/
 Express/.env
 Express/package-lock.json
 
 
-Django/venv
+# Ignore Django folder specific files/folders
+Django/venv/
 Django/db.sqlite3

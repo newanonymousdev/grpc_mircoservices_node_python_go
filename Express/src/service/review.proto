@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package review;
+
+service ReviewService {
+    rpc CreateReview (ReviewRequest) returns (ReviewResponse);
+}
+
+message ReviewRequest {
+    string userId = 1;
+    string serviceId = 2;
+    int32 star = 3;
+}
+
+message ReviewResponse {
+    string message = 1;
+    bool success = 2;
+}

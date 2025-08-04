@@ -9,7 +9,7 @@ import signal
 class Command(BaseCommand):
     help = 'Run both Django and gRPC servers'
     commands = [
-        'python manage.py grpcserver',   # Chạy gRPC server
+        'python manage.py grpcserver --port=5100',   # Chạy gRPC server
         'python manage.py runserver'     # Chạy Django server
     ]
 
@@ -30,3 +30,4 @@ class Command(BaseCommand):
             # Khi người dùng nhấn Ctrl+C, kết thúc các server
             for proc in proc_list:
                 os.kill(proc.pid, signal.SIGKILL)
+
