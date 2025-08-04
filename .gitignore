@@ -1,9 +1,10 @@
 # Ignore all .DS_Store files recursively
 **/.DS_Store
 
+**/.env*
+
 # Ignore Express folder specific files/folders
 Express/node_modules/
-Express/.env
 Express/package-lock.json
 
 

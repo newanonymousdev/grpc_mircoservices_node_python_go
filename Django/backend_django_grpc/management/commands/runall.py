@@ -9,7 +9,7 @@ import signal
 class Command(BaseCommand):
     help = 'Run both Django and gRPC servers'
     commands = [
-        'python manage.py grpcserver --port=5100',   # Chạy gRPC server
+        'python manage.py grpcserver',   # Chạy gRPC server
         'python manage.py runserver'     # Chạy Django server
     ]
 

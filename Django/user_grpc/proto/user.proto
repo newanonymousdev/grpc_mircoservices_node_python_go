@@ -4,6 +4,7 @@ package user;
 
 service UserService {
     rpc CreateUser (UserRequest) returns (UserResponse);
+    // rpc GetUserList () returns (UserListResponse);
 }
 
 message UserRequest {
@@ -15,3 +16,7 @@ message UserResponse {
     string message = 1;
     bool success = 2;
 }
+
+// message UserListResponse {
+
+// }

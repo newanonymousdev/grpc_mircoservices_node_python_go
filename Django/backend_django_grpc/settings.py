@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
+from decouple import config
 
 from pathlib import Path
 
@@ -47,7 +48,7 @@ INSTALLED_APPS = [
 
 GRPCSERVER = {
     'servicers': [
-        'user_grpc.server.servicers.grpc_handlers',  # Đường dẫn đến module đăng ký dịch vụ
+        'user_grpc.server.servicers.grpc_handlers',
         'review_grpc.server.servicers.grpc_handlers',  
     ],
     'maximum_concurrent_rpcs': None,
@@ -93,9 +94,17 @@ WSGI_APPLICATION = 'backend_django_grpc.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': config('DB_NAME'),
+    'USER': config('DB_USER'),
+    'PASSWORD': config('DB_PASSWORD'),
+    'HOST': config('DB_HOST', default='localhost'),
+    'PORT': config('DB_PORT', default='5432'),
     }
 }
 
